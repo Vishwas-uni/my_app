@@ -1,34 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../../common/Button";
+import {CounterDecrement, CounterIncrement} from "./Counter";
 import "./style.css";
+import Signup from "./Signup";
 
 function Welcome() {
-  const array = [];
-  
-  const handleClcik = () => {
-    array.push(array.length + 1);
-  };
+  const [count, setCount] = useState(0)
 
-  const handleSubmit = () => {
-    console.log(array);
-  };
-
-  const handleChange = (event) => {
-    console.log("You Changed", event.target.value);
-  };
+  const handleIncrement = () =>{
+   setCount(prev=>prev+1)
+  }
+  const handleDecrement = () =>{
+   setCount(prev=>prev-1)
+  }
 
   return (
     <div className="body__welcome">
-      <input
-        onChange={handleChange}
-        style={{ borderRadius: "1px solid red" }}
-      />
-      array:{array}
-      <button id="last_btn" className="welcome__btn" onClick={handleClcik}>
-        Add
-      </button>
-      <button id="last_btn" className="welcome__btn" onClick={handleSubmit}>
-        Get Array
-      </button>
+      <span style={{ display: "block", marginBottom: "10px" }}>
+        {/* <h2>{count}</h2>
+        <CounterIncrement handleIncrement={handleIncrement} />
+        <CounterDecrement handleDecrement={handleDecrement}/> */}
+        <Signup/>
+      </span>
     </div>
   );
 }

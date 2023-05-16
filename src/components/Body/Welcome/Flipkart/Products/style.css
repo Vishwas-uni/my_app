@@ -1,0 +1,10 @@
+.products_container{
+    border-right: 2px solid black;
+    flex: 1 1;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

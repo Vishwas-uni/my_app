@@ -1,0 +1,17 @@
+.demo_app_button-primary{
+    background: blue;
+    outline:none;
+    border:none;
+    padding:4px 8px;
+    border-radius:5px;
+    color:white;
+    margin: 4px;
+
+}
+
+.demo_app_button-secondary{
+    background: rgb(206, 206, 213);
+    outline:none;
+    border:1px solid blue;
+    padding:4px 8px;
+}

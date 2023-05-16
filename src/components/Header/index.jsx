@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
-function Header() {
+function Header(props) {
+  const { title } = props;
+ 
   return (
     <header className="demo-app_header">
-      <h1>Header</h1>
+      <h1>{title}</h1>
     </header>
   );
 }

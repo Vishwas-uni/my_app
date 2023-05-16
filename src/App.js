@@ -6,7 +6,7 @@ import Header from './components/Header';
 function App() {
   return (
     <div className="demo-app_container">
-     <Header/>
+     <Header title={"Welcome to React Session 8"}/>
      <Body/>
      <Footer/>
     </div>

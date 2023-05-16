@@ -1,0 +1,7 @@
+.flipkart__container{
+    width:100%;
+}
+.flipkart__body{
+    display: flex;
+    flex-direction: row;
+}
