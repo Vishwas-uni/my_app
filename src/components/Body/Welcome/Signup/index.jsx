@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
+import { Button } from "react-component-library";
+import "react-component-library/styles.css";
+
+
 
 function SingUp() {
   const [data, setData] = useState({
@@ -12,6 +16,14 @@ function SingUp() {
   });
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  useEffect(() => {
+    console.log("UseEffect on Mount");
+
+    return ()=>{
+      console.log('UseEffect unmount')
+    }
+  }, []);
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -20,14 +32,14 @@ function SingUp() {
   };
 
   const isValidData = () => {
-    return (
-      data.firstName &&
+    return data.firstName &&
       data.lastName &&
       data.email &&
       data.password &&
       data.confirmPassword &&
-      data.userRole ? true : false
-    );
+      data.userRole
+      ? true
+      : false;
   };
 
   const handleSubmit = (event) => {
@@ -120,9 +132,13 @@ function SingUp() {
             </div>
           </div>
 
-          <button className="signup-btn" type="submit" disabled={!isValidData()}>
-            Sign up
-          </button>
+          <Button
+            // className="signup-btn"
+            type="submit"
+            size='small'
+            // disabled={!isValidData()}
+            label="Sign up"
+          />
           <a href="#" className="btn__a">
             {" "}
             have an accoutn? Sign In

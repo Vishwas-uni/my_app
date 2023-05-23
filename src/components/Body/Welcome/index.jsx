@@ -1,27 +1,30 @@
 import React, { useState } from "react";
 import Button from "../../common/Button";
-import {CounterDecrement, CounterIncrement} from "./Counter";
+import { CounterDecrement, CounterIncrement } from "./Counter";
 import "./style.css";
 import Signup from "./Signup";
+import SearchInput from "./SearchInput";
 
 function Welcome() {
-  const [count, setCount] = useState(0)
-
-  const handleIncrement = () =>{
-   setCount(prev=>prev+1)
-  }
-  const handleDecrement = () =>{
-   setCount(prev=>prev-1)
-  }
+  const [isMount, setIsMount] = useState(false);
 
   return (
     <div className="body__welcome">
-      <span style={{ display: "block", marginBottom: "10px" }}>
-        {/* <h2>{count}</h2>
-        <CounterIncrement handleIncrement={handleIncrement} />
-        <CounterDecrement handleDecrement={handleDecrement}/> */}
-        <Signup/>
-      </span>
+      {isMount ? (
+        <div
+          className="welcome_signup_wraaper"
+          style={{ display: "block", marginBottom: "10px" }}
+        >
+          <Signup />
+          
+        </div>
+      ) : (
+        <></>
+      )}
+      <Button
+        onClick={() => setIsMount((prev) => !prev)}
+        label={isMount ? "Unmount" : "Mount"}
+      />
     </div>
   );
 }
